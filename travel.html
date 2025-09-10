@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours and Travel Project</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts -->
+    <link rel="stylesheet" href="font.css">
+    <!-- normalize css-->
+    <link rel="stylesheet" href="normalize.css">
+    <!-- custom css-->
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="travel.css">
+    <link rel="stylesheet" href="test.css">
+
+    <style>
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+            cursor: pointer;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px; /* large enough for content */
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+ <!-- navbar  -->
+ <nav class = "navbar">
+    <div class = "container flex">
+        <a href = "travel.html" class = "site-brand">
+            Roam<span>Expeditions</span>
+        </a>
+
+        <button type = "button" id = "navbar-show-btn" class = "flex">
+            <i class = "fas fa-bars"></i>
+        </button>
+        <div id = "navbar-collapse">
+            <button type = "button" id = "navbar-close-btn" class = "flex">
+                <i class = "fas fa-times"></i>
+            </button>
+            <ul class = "navbar-nav">
+                <li class = "nav-item">
+                    <a href = "travel.html" class = "nav-link">Home</a>
+                </li>
+                <li class = "nav-item">
+                    <a href = "destination.html" class = "nav-link">Destination</a>
+                </li>
+                <li class = "nav-item">
+                    <a href = "packages.html" class = "nav-link">Packages</a>
+                </li>
+                <li class = "nav-item">
+                    <a href = "travel-tips.html" class = "nav-link">Travel Tips</a>
+                </li>
+                <li class = "nav-item">
+                    <a href = "contact.html" class = "nav-link">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- end of navbar  -->
+
+      <!-- header -->
+      <header class="flex">
+        <div class="container">
+            <div class="header-title">
+                <h1>"Roaming Worlds, Expedite Together!"</h1>
+                <p>"Discover breathtaking destinations with our unforgettable travel experiences."</p>
+            </div>
+            <div class="header-form">
+                <h2>Choose your Travel location:</h2>
+                <form class="flex">
+                    <input type="text" class="form-control" placeholder="Destination">
+                    <input type="date" class="form-control" placeholder="Date">
+                    <input type="number" class="form-control" placeholder="Price ($)">
+                    <input type="submit" class="btn" value="Search">
+                </form>
+            </div>
+        </div>
+      </header>
+      <!-- end of header -->
+
+      <!-- featured section -->
+      <section id="featured" class="py-4">
+        <div class="container">
+            <div class="title-wrap">
+                <span class="sm-title">Discover key destinations and travel tips to make the most of your journey</span>
+            <h2 class="lg-title">Featured Places</h2>
+            </div>
+            
+            <div class="featured-row">
+                <div class="featured-item my-2 shadow">
+                    <img src="Australia.jpg" alt="featured place">
+                    <div class="featured-item-content">
+                        <span><i class="fas fa-map-marker-alt"></i> Australia</span>
+                        <p class="text">Unleash adventure in Australia's diverse landscapes, wildlife, and vibrant cities.</p>
+                    </div>
+                </div>
+
+                <div class="featured-item my-2 shadow">
+                    <img src="France.jpg" alt="featured place">
+                    <div class="featured-item-content">
+                        <span><i class="fas fa-map-marker-alt"></i> France</span>
+                        <p class="text">Embrace romance and culture in France's timeless charm and elegance.</p>
+                    </div>
+                </div>
+
+                <div class="featured-item my-2 shadow">
+                    <img src="Maldives.jpg" alt="featured place">
+                    <div class="featured-item-content">
+                        <span><i class="fas fa-map-marker-alt"></i> Maldives</span>
+                        <p class="text">Escape to paradise - Maldives' pristine beaches and azure waters await.</p>
+                    </div>
+                </div>
+
+                <div class="featured-item my-2 shadow">
+                    <img src="Nepal.jpg" alt="featured place">
+                    <div class="featured-item-content">
+                        <span><i class="fas fa-map-marker-alt"></i> Nepal</span>
+                        <p class="text">Embark on an enchanting journey through Nepal's Himalayan wonders and spirituality.</p>
+                    </div>
+                </div>
+
+                <div class="featured-item my-2 shadow">
+                    <img src="Switzerland.jpg" alt="featured place">
+                    <div class="featured-item-content">
+                        <span><i class="fas fa-map-marker-alt"></i> Switzerland</span>
+                        <p class="text">Discover breathtaking alpine beauty in Switzerland's serene landscapes and culture.</p>
+                    </div>
+                </div>
+
+                <div class="featured-item my-2 shadow">
+                    <img src="Italy.jpg" alt="featured place">
+                    <div class="featured-item-content">
+                        <span><i class="fas fa-map-marker-alt"></i> Italy</span>
+                        <p class="text">Indulge in la dolce vita, art, and history in Italy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- end of featured section -->
+
+       <!-- services section -->
+       <section id = "services" class = "py-4">
+        <div class = "container">
+            <div class = "title-wrap">
+                <span class = "sm-title">know about services that we offer</span>
+                <h2 class = "lg-title">Our services</h2>
+            </div>
+
+            <div class = "services-row">
+                <div class = "services-item">
+                    <span class = "services-icon"><i class = "fas fa-hotel"></i></span>
+                    <h3>Luxurious Hotel</h3>
+                    <p class = "text">Indulge in opulence, elegance, and impeccable service at our handpicked collection of luxurious hotels worldwide.</p>
+                    <a href = "#" class = "btn">Read more</a>
+                </div>
+
+                <div class = "services-item">
+                    <span class = "services-icon"><i class = "fas fa-map-marked-alt"></i></span>
+                    <h3>Travel Guide</h3>
+                    <p class = "text">Discover hidden gems, insider tips, and curated itineraries in our comprehensive travel guides for unforgettable journeys.</p>
+                    <a href = "#" class = "btn">Read more</a>
+                </div>
+
+                <div class = "services-item">
+                    <span class = "services-icon"><i class = "fas fa-money-bill"></i></span>
+                    <h3>Suitable Price</h3>
+                    <p class = "text">Unlock unbeatable deals and the best prices for your dream vacations on our travel website and many more.</p>
+                    <a href = "#" class = "btn">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of services section -->
+
+    <!-- FAQ section -->
+    <section id="faq" class="py-4">
+        <div class="container">
+            <div class="title-wrap">
+                <span class="sm-title">Got Questions?</span>
+                <h2 class="lg-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I book a trip?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply use our search form to find your destination, choose your preferred package, and follow the guided booking steps.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I customize my travel package?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer customizable travel options so you can add tours, activities, or extend your stay based on your preferences.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What payment methods are accepted?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit/debit cards, PayPal, and bank transfers for your convenience.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer travel insurance?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide affordable travel insurance packages to ensure your journey is safe and worry-free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of FAQ section -->
+
+  <footer class="py-4">
+    <div class="container footer-row">
+      <div class="footer-item">
+        <a href="index.html" class="site-brand">Roam<span>Expeditions</span></a>
+        <p class="text">Roaming Worlds, Expedite Together<p>
+      </div>
+      <div class="footer-item">
+        <h2>Follow us</h2>
+        <ul class="social-links">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <h2>Popular Places</h2>
+        <ul>
+          <li><a href="destinations.html">Bali</a></li>
+          <li><a href="destinations.html">Italy</a></li>
+          <li><a href="destinations.html">Nepal</a></li>
+        </ul>
+      </div>
+      <div class="subscribe-form footer-item">
+        <h2>Subscribe for Newsletter</h2>
+        <form class="flex">
+          <input type="email" class="form-control" placeholder="Enter Email" />
+          <input type="submit" class="btn" value="Subscribe" />
+        </form>
+      </div>
+    </div>
+  </footer>
+        <!-- end of footer -->
+
+<script src="travel.js"></script>
+<script>
+    // FAQ toggle script
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.querySelector(".faq-question").addEventListener("click", () => {
+            item.classList.toggle("active");
+        });
+    });
+</script>
+</body>
+</html>
